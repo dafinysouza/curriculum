@@ -26,6 +26,16 @@ export const Shadow = theme('mode', {
   dark: '#fff2',
 });
 
+export const Primaria = theme('mode', {
+  light: '#868a8b',
+  dark: '#868a8b',
+});
+
+export const Secundaria = theme('mode', {
+  light: '#868a8b',
+  dark: '#868a8b',
+});
+
 export const Button = styled.button`
   background-color: ${MiddleSecondBackground};
   color: ${TextColor};
