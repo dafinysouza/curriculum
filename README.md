@@ -1,8 +1,8 @@
-# KitStarter React Js com Typescript
+# Criação de currículo utilizando ReactJS com TypeScript
 
-## Pré-configurado com react-router-dom, styled-components e sistema de temificação
+### Pré-configurado com react-router-dom, styled-components e sistema de temificação
 
-## Instalação
+### Instalação
 
 ```
 yarn install && yarn start
