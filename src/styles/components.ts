@@ -5,6 +5,10 @@ export const TextColor = theme('mode', {
   light: '#333',
   dark: '#DEE4E7',
 });
+export const TextColorSecond = theme('mode', {
+  light: '#b2b2b2',
+  dark: '#DEE4E7',
+});
 export const FuhthestBackground = theme('mode', {
   light: '#DEE4E7',
   dark: '#111418',
@@ -36,6 +40,11 @@ export const Secundaria = theme('mode', {
   dark: '#868a8b',
 });
 
+export const Terciaria = theme('mode', {
+  light: '#e3e4e6',
+  dark: '#e3e4e6',
+});
+
 export const Button = styled.button`
   background-color: ${MiddleSecondBackground};
   color: ${TextColor};
@@ -61,4 +70,22 @@ export const Container = styled.div`
   width: calc(100% - 40px);
   max-width: 1140px;
   margin: 0 auto;
+`;
+
+export const Subtitle = styled.h2`
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+  color: ${Secundaria};
+  font-family: 'Julius Sans One', sans-serif;
+  padding: 2vh 0;
+  border-bottom: 1px solid ${TextColorSecond};
+  &.primaria {
+    color: ${Primaria};
+  }
+`;
+
+export const H3 = styled.h3`
+  font-family: 'Julius Sans One', sans-serif;
+  color: ${Secundaria};
+  font-size: 1rem;
+  margin-bottom: 30px;
 `;
