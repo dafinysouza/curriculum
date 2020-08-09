@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as IconPin } from 'src/assets/icons/pin.svg';
 import { ReactComponent as IconWorld } from 'src/assets/icons/world.svg';
 import { ReactComponent as IconMail } from 'src/assets/icons/mail.svg';
@@ -7,6 +7,14 @@ import { SidebarWrapper, ProfilePicture, AdressContent, Skills } from './style';
 import Skill from '../Skill';
 
 export default function Sidebar() {
+  const [data, setData] = useState<[{ [key: string]: any }]>([{}]);
+  useEffect(() => {
+    fetch('http://localhost:1337/skills').then((res) => 
+      res.json().then((data) => {
+        setData(data);
+      })
+    );
+  }, []);
   return (
     <SidebarWrapper>
       <ProfilePicture>
@@ -41,7 +49,9 @@ export default function Sidebar() {
       </AdressContent>
       <Skills>
         <Subtitle></Subtitle>
-        <Skill title="JavaScript" percent="40%" />
+        {data.map((element: { [key: string]: any }, index: number) => (
+          <Skill title={element.title} percent={`${element.percent * 100}%`} key={index} />
+        ))}
       </Skills>
     </SidebarWrapper>
   );
